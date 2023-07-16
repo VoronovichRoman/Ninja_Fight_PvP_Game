@@ -13,8 +13,9 @@ public class PlayerInput : NetworkBehaviour
     }
     void Update()
     {
-        float HorizontalDirection = Input.GetAxis("Horizontal");
+        float horizontalDirection = Input.GetAxis("Horizontal");
+        bool isJumpActive = Input.GetKeyDown(KeyCode.E);
 
-        _playerMovement.Move(HorizontalDirection);
+        _playerMovement.Move(horizontalDirection, isJumpActive);
     }
 }
